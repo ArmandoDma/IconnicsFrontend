@@ -304,7 +304,7 @@ body{
 .home_ct .features{
     width: 100%;
     overflow: hidden;
-    height: 80vh;
+    height: calc(100vh - 20px);
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -446,7 +446,7 @@ body{
 /*sync section*/
 .home_ct .sync{
     width: 100%;
-    height: calc(80vh - 20px);
+    height: calc(100vh - 20px);
     padding: 3rem 0;
     background-color: #fff;
     display: flex;
@@ -550,4 +550,12 @@ body{
     top: 0;
     left: 20px;
     z-index: 1;
+}
+.home_ct .alerts{
+    width: 100%;
+    height: calc(100vh - 20px);
+    background-image: url(../images/alerts.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: top;
 }
