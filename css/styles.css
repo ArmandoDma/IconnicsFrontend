@@ -550,6 +550,7 @@ body{
     top: 0;
     left: 20px;
     z-index: 1;
+
 }
 .home_ct .alerts{
     width: 100%;
@@ -558,4 +559,92 @@ body{
     background-position: center;
     background-size: cover;
     vertical-align: top;
+}
+.home_ct .alerts .cap_alerts{
+    width: 90%;
+    margin: auto;
+    padding: 3rem 0;
+}
+.home_ct .alerts .cap_alerts h4{
+    font-size: 2rem;
+}
+.home_ct .alerts .cap_alerts h3{
+    font-size: 3rem;
+    color: #fff;
+}
+.home_ct .alerts .cap_alerts h2{
+    font-size: 4rem;
+    color: #297bef;
+    margin-bottom: 20px;
+}
+.home_ct .alerts .cap_alerts .btn_push{
+    margin-top: 20px;
+}
+.home_ct .alerts .cap_alerts .btn_push button{
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: 1px solid #000;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.home_ct .alerts .cap_alerts .btn_push button i{
+    margin: 0 5px;
+}
+.home_ct .support{
+    width: 100%;
+    height: calc(100vh - 20px);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    background-color: #297bef;
+}
+.home_ct .support h2{
+    font-size: 3.5rem;
+    display: block;
+    font-weight: 800;
+    background-image: url(../images/pattern.jpg);
+    background-position: center;
+    color: transparent;
+    background-size: contain;
+    background-attachment: fixed;
+    background-clip: text;
+    margin: 10px 0;
+}
+.home_ct .support .srchr input{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: .875rem;
+    font-family: inherit;
+    background: #3070c9;
+    color: #fff;
+    outline: none;
+    border: 2px solid #7eaff5;
+}
+.home_ct .support .srchr input::placeholder{
+    color: #023070;
+}
+.home_ct .support svg{
+    position: absolute;
+    top: 0;
+    transform: rotate(180deg);
+    left: 0;
+    width: 100%;
 }

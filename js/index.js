@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
             if (island.classList.contains('active')) {
                 island.style.animation = 'expand .3s ease-in forwards';
 
-                audioNoti.play().then(() => {
+                audioNoti.pause().then(() => {
                     console.log("Audio started after scroll + delay");
                 }).catch(err => {
                     console.log("Audio blocked:", err);
@@ -36,3 +36,28 @@ measure.forEach((li, index) => {
     });
 })
 
+let noti = document.getElementById('allownoti');
+  let clickCount = 0;
+  const maxClicks = 1;
+
+  noti.addEventListener('click', () => {
+    if (clickCount >= maxClicks) {
+      console.log("Notification limit reached.");
+      noti.disabled = true; // Opcional: desactiva el botón
+      noti.innerText = "Notifications Set";
+      return;
+    }
+
+    Notification.requestPermission().then(permission => {
+      if (permission === 'granted') {
+        new Notification('Notifications Enabled', {
+          body: 'You will now receive real-time alerts.',
+          icon: '../images/iconnics_logo.png'
+        });
+      }
+    }).catch(err => {
+      console.log("Notification permission error:", err);
+    });
+
+    clickCount++;
+  });
