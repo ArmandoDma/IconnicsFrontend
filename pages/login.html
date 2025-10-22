@@ -1,0 +1,39 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iconnics - Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="shortcut icon" href="../images/iconnics_logo.png" type="image/x-icon">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="login_ct">
+        <div class="login-container">
+            <div class="logo">
+                <img src="../images/iconnics_logo.png" alt="">
+                <p>Iconnics</p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" placeholder="Ingresa tu correo">
+
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" placeholder="Ingresa tu contraseña">
+
+                <button type="submit" class="btn-primary">Iniciar sesión</button>
+            </form>
+
+            <p class="foot">¿No tienes cuenta? <a href="register.html">Regístrate</a></p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../js/login.js"></script>
+</body>
+
+</html>

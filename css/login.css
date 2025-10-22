@@ -1,0 +1,85 @@
+@import url(../css/fonts.css);
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Outfit', sans-serif;
+}
+.login_ct{
+ width: 95%;   
+ margin: auto;
+ background-image: url(../images/login_bg.jpg);
+ background-size: cover;
+ background-position: center;
+ height: 90vh;
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.login-container{
+    position: absolute;
+    box-shadow: 0 0 15px rgba(0,0,0,.1);
+    right: calc(20% - 100px);
+    text-align: center;
+    width: max-content;
+    border: 1px solid #aaa;
+    padding: 2rem;
+} 
+.login-container p{
+    font-size: .875rem;
+}
+.login-container p a{
+    text-decoration: none;
+    color: #297bef;
+    cursor: pointer;
+}
+.login-container .logo{
+    display: flex;
+    align-items: center;
+    text-emphasis: center;
+    justify-content: center;
+}
+.login-container .logo img{
+    width: 4.5rem;
+    height: 4.5rem;
+    object-fit: cover;
+    object-position: center;
+    vertical-align: top;
+}
+.login-container .logo p{
+    font-size: 3rem;
+    color: #297bef;
+    line-height: 4.5rem;
+    font-weight: 600;
+}
+.login-container .login-form{
+    display: flex;
+    text-align: justify;
+    flex-direction: column;
+}
+.login-container .login-form label{
+    font-size: .875rem;
+    margin-bottom: 5px;
+}
+.login-container .login-form input{
+    color: #297bef;
+    border: 1px solid #aaa;
+    padding: 10px;
+    outline: none;
+    font-size: .875rem;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-family: inherit;
+}
+.login-container .login-form button{
+    padding: 10px;
+    font-family: inherit;
+    border: none;
+    background-color: #297bef;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #fff;
+}

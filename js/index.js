@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
             if (island.classList.contains('active')) {
                 island.style.animation = 'expand .3s ease-in forwards';
 
-                audioNoti.pause().then(() => {
+                audioNoti.play().then(() => {
                     console.log("Audio started after scroll + delay");
                 }).catch(err => {
                     console.log("Audio blocked:", err);
