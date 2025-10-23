@@ -1,12 +1,12 @@
 // js/api.js
-export const loginUsuario = async (correo, contraseña) => {
+export const loginUsuario = async (correo, contrasena) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/auth/login', {
+    const response = await axios.post('http://localhost:3000/api/usuarios/login', {
       correo,
-      contraseña
+      contrasena
     });
 
-    return response.data; // retorna nuestro token de auth
+    return response.data; 
   } catch (error) {
     throw error.response?.data?.error || 'Error al conectar con el servidor';
   }

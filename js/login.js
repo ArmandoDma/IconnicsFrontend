@@ -4,8 +4,8 @@ import { manejarLogin } from './auth.js';
 document.getElementById('loginForm').addEventListener('submit', function(e){
   e.preventDefault();
 
-  const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim();
+  const correo = document.getElementById('email').value.trim();
+  const contrasena = document.getElementById('password').value.trim();
 
-  manejarLogin(email, password);
+  manejarLogin(correo, contrasena);
 });
