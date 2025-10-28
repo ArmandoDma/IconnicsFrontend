@@ -1,80 +1,33 @@
 @import url(../css/fonts.css);
-body {
-    margin: 0;
-    font-family: 'Outfit', sans-serif;
-    background: #f0f4f8;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-header {
-    background: #003366;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-#rolSelector {
-    padding: 0.4rem;
-    border-radius: 4px;
-    font-family: inherit;
-    border: none;
-}
-
-aside {
-    background: #002244;
-    color: white;
-    width: 200px;
-    padding: 1rem;
-    position: fixed;
-    top: 70px;
-    bottom: 0;
-}
-
-aside ul {
-    list-style: none;
+*{
     padding: 0;
-}
-
-aside li {
-    margin: 1rem 0;
-    cursor: pointer;
-}
-
-main {
-    margin-left: 220px;
-    padding: 2rem;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.card {
-    background: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.card h2 {
     margin: 0;
-    font-size: 1rem;
-    color: #666;
+    box-sizing: border-box;
 }
-
-.card p {
-    font-size: 2rem;
-    margin: 0.5rem 0 0;
-    color: #003366;
-    font-weight: bold;
+body{
+    font-family: 'Outfit', sans-serif;
+    background-color: #f3f3f3;
+}
+.ct_dash{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 70px auto;
+    grid-template-columns: 250px auto;
+    grid-template-areas: 
+    "hdr hdr"
+    "asi main";
+}
+.ct_dash .hdr{
+    grid-area: hdr;
+    background-color: #fff;
+}
+.ct_dash .asi{
+    grid-area: asi;
+    background: #fff;
+}
+.ct_dash .mn{
+    grid-area: main;
+    background-color: #000;
 }
