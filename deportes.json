@@ -1,0 +1,11 @@
+{
+  "deportes_medibles": [
+    { "id": 1, "nombre": "Cycling" },
+    { "id": 2, "nombre": "Swimming" },
+    { "id": 3, "nombre": "Running" },
+    { "id": 4, "nombre": "Boxing" },
+    { "id": 5, "nombre": "Soccer" },
+    { "id": 6, "nombre": "CrossFit" },
+    { "id": 7, "nombre": "Tennis" }
+  ]
+}

@@ -14,26 +14,10 @@ export const loginUsuario = async (correo, contrasena) => {
   }
 };
 
-export const registerUsuario = async (
-  nombre,
-  edad,
-  rol,
-  peso,
-  altura,
-  deporte,
-  correo,
-  contrasena
-) => {
+export const registerUsuario = async (datos) => {
   try {
     const response = await axios.post("http://localhost:3000/api/usuarios", {
-      nombre,
-      edad,
-      rol,
-      peso,
-      altura,
-      deporte,
-      correo,
-      contrasena,
+      datos
     });
 
     return response.data;

@@ -89,6 +89,7 @@ export const manejarRegister = async (
 
     const res = await registerUsuario(datos);
     window.location.href = "../pages/login.html";
+    console.log(res)
   } catch (error) {
     showError(error.message || "Error de conexión con el servidor");
     window.location.reload();
