@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iconnics - Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="../js/router.js"></script>
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="../images/iconnics_logo.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="ct_dash">
+      <header class="hdr">
+        <nav class="nv_hdr">
+          <ul>
+            <li>
+              <i class="bx bx-search"></i
+              ><input
+                type="search"
+                name="srchr"
+                aria-autocomplete="list"
+                placeholder="Search Measures, Reports, Tips"
+                id="srchr"
+              /><button>Ctrl + F</button>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <button
+                class="noti_btn"
+                id="noti_btn"
+                type="button"
+                role="button"
+              >
+                <i class="bx bx-bell"></i>
+              </button>
+            </li>
+            <li>
+              <button>
+                <img src="../images/dma_oxidao.jpg" alt="user_image_profile" />
+                <p id="uinfo"></p>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <aside class="asi">
+        <nav class="asi_nav">
+          <ul class="nav" id="nav">
+            <ul class="logo">
+              <li>
+                <a href="main.html#dashboard"
+                  ><img src="../images/iconnics_logo.png" alt="" />
+                  <p>Iconnics</p></a
+                >
+              </li>
+            </ul>
+            <ul class="links">
+              <li class="lnk active">
+                <a href="#dashboard"
+                  ><i class="bx bxs-dashboard"></i> Dashboard</a
+                >
+              </li>
+              <li class="lnk">
+                <a href="#performance"
+                  ><i class="bx bx-dumbbell"></i>Performance</a
+                >
+              </li>
+              <li class="lnk">
+                <a href="#bodydata"><i class="bx bx-body"></i>Body Data</a>
+              </li>
+              <li class="lnk">
+                <a href="#tips"
+                  ><i class="bxr bx-light-bulb-alt"></i>Benefits</a
+                >
+              </li>
+            </ul>
+            <ul class="lnks_dw">
+              <li class="lnk">
+                <a href="#settings"><i class="bxr bx-cog"></i>Settings</a>
+              </li>
+              <li class="lnk">
+                <a href="#help"><i class="bxr bx-handshake"></i> Help</a>
+              </li>
+              <li class="lnk">
+                <a id="logout" href="#logout"
+                  ><i class="bxr bx-arrow-out-right-square-half"></i> Logout</a
+                >
+              </li>
+            </ul>
+          </ul>
+        </nav>
+      </aside>
+      <main class="mn" id="main-content"></main>
+      <div id="ovrly" class="overlay">
+        <div class="ct_ovr">
+          <div class="imgbox">
+            <img src="../images/fitness-1-94.svg" alt="" />
+          </div>
+          <div id="logout-message" class="logout_overlay">
+            <div class="logout_box">
+              <h2>Wait until we close your session</h2>
+              <p>
+                We're making sure everything is clean and secure. Hang tight...
+              </p>
+              <span id="number"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

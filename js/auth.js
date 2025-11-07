@@ -21,7 +21,7 @@ export const manejarLogin = async (correo, contrasena) => {
     const { token, mensaje } = await loginUsuario(correo, contrasena);
     localStorage.setItem("token", token);
     alert(JSON.stringify(token));
-    window.location.href = "../pages/home.html";
+    window.location.href = "../pages/main.html#";
   } catch (error) {
     alert(error);
   }
@@ -53,7 +53,7 @@ export const manejarRegister = async (
   const deporteRegex = /^[A-Za-z\s]{2,}$/;
   const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
-  const rolesValidos = ["Admin", "Coach", "Deportist"];
+  const rolesValidos = ["Coach", "Deportist"];
 
   if (!nombreRegex.test(nombre))
     return showError(
@@ -92,6 +92,8 @@ export const manejarRegister = async (
     console.log(res)
   } catch (error) {
     showError(error.message || "Error de conexión con el servidor");
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000)
   }
 };

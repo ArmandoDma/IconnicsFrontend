@@ -1,7 +1,7 @@
 export const loginUsuario = async (correo, contrasena) => {
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/usuarios/login",
+      "https://iconnicsserver.zeabur.app/api/usuarios/login",
       {
         correo,
         contrasena,
@@ -16,7 +16,7 @@ export const loginUsuario = async (correo, contrasena) => {
 
 export const registerUsuario = async (datos) => {
   try {
-    const response = await axios.post("http://localhost:3000/api/usuarios", {
+    const response = await axios.post("https://iconnicsserver.zeabur.app/api/usuarios", {
       datos
     });
 
