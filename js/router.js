@@ -1,4 +1,4 @@
-import { initDashboard } from "./dash.js";
+import { getNotifications, initDashboard, populateHealthTips } from "./dash.js";
 
 const routes = {
   "#dashboard": "../pages/views/dashboard.html",
@@ -7,6 +7,7 @@ const routes = {
   "#bodydata": "../pages/views/bodydata.html",
   "#settings": "../pages/views/settings.html",
   "#help": "../pages/views/help.html",
+  "#notifications": "../pages/views/notifications.html",
 };
 
 let lastValidHash = "#dashboard";
@@ -22,6 +23,7 @@ async function loadContent() {
     "#bodydata",
     "#settings",
     "#help",
+    "#notifications",
   ];
 
   if (!token && protectedRoutes.includes(window.location.hash)) {
@@ -48,6 +50,7 @@ async function loadContent() {
     case "#tips":
     case "#bodydata":
     case "#settings":
+    case "#notifications":
     case "#help":
       lastValidHash = hash; // ← actualiza la vista válida
       break;
@@ -66,6 +69,8 @@ async function loadContent() {
 
     if (hash === "#dashboard") {
       initDashboard();
+      populateHealthTips();
+      getNotifications();
     }
   } catch (err) {
     document.getElementById("main-content").innerHTML =
