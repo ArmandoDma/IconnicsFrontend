@@ -1,7 +1,7 @@
-/*window.addEventListener("load", () => {
+window.addEventListener("load", () => {
   window.location.pathname.includes("main.html");
   window.location.assign("#main");
-});*/
+});
 
 let uinfo = document.getElementById("uinfo");
 uinfo.innerHTML = "User <br/> Email";

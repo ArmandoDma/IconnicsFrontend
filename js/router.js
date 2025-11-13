@@ -1,3 +1,5 @@
+import { cargarModeloAnatomico, iniciarEscena } from "./3dmodel.js";
+import { initBody } from "./bodydata.js";
 import { getNotifications, initDashboard, populateHealthTips } from "./dash.js";
 
 const routes = {
@@ -26,7 +28,7 @@ async function loadContent() {
     "#notifications",
   ];
 
-  if (!token && protectedRoutes.includes(window.location.hash)) {
+  if (!token && protectedRoutes.includes(hash)) {
     document.getElementById("main-content").innerHTML = `
     <div class="caps">
       <div class="caps-inner">
@@ -49,10 +51,12 @@ async function loadContent() {
     case "#performance":
     case "#tips":
     case "#bodydata":
+      lastValidHash = hash;
+      break;
     case "#settings":
     case "#notifications":
     case "#help":
-      lastValidHash = hash; // ← actualiza la vista válida
+      lastValidHash = hash;
       break;
 
     default:
@@ -66,6 +70,12 @@ async function loadContent() {
     const res = await fetch(file);
     const html = await res.text();
     document.getElementById("main-content").innerHTML = html;
+
+    if (hash === "#bodydata") {
+      iniciarEscena("anatomyCanvas");
+      cargarModeloAnatomico("../renders/scene.gltf");
+      initBody();
+    }
 
     if (hash === "#dashboard") {
       initDashboard();
