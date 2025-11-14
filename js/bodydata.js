@@ -45,3 +45,57 @@ new Chart(ctx, {
   }
 });
 }
+
+export function stepsChart (){
+  const stepsCompleted = 7200;
+  const stepsGoal = 10000;
+  const stepsRemaining = stepsGoal - stepsCompleted;
+
+  const ctx = document.getElementById('stepsChart').getContext('2d');
+
+  const stepsCharts = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Pasos realizados', 'Pasos restantes'],
+      datasets: [{
+        data: [stepsCompleted, stepsRemaining],
+        backgroundColor: ['#107be5', '#e0e0e0'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      cutout: '75%',
+      plugins: {
+        title: {
+          display: false,
+          text: 'Progreso de pasos hoy',
+          font: {
+            size: 18
+          }
+        },
+        legend: {
+          display: false
+        }
+      }
+    },
+    plugins: [{
+      id: 'centerText',
+      beforeDraw: (chart) => {
+        const { width } = chart;
+        const { height } = chart;
+        const ctx = chart.ctx;
+        ctx.restore();
+        const fontSize = (height / 200).toFixed(2);
+        ctx.font = `${fontSize}em sans-serif`;
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = '#e5101b';
+        const text = `${stepsCompleted.toLocaleString()} steps`;
+        const textX = Math.round((width - ctx.measureText(text).width) / 2);
+        const textY = height / 2;
+        ctx.fillText(text, textX, textY);
+        ctx.save();
+      }
+    }]
+  });
+}

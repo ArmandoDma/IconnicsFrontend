@@ -1,5 +1,5 @@
 import { cargarModeloAnatomico, iniciarEscena } from "./3dmodel.js";
-import { initBody } from "./bodydata.js";
+import { initBody, stepsChart } from "./bodydata.js";
 import { getNotifications, initDashboard, populateHealthTips } from "./dash.js";
 
 const routes = {
@@ -75,6 +75,7 @@ async function loadContent() {
       iniciarEscena("anatomyCanvas");
       cargarModeloAnatomico("../renders/scene.gltf");
       initBody();
+      stepsChart();
     }
 
     if (hash === "#dashboard") {

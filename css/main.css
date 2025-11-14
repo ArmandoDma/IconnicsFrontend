@@ -679,76 +679,245 @@ canvas {
 .card_details h3 {
   font-size: 1.25rem;
 }
-.card_details ul{
+.card_details ul {
   list-style: none;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-rows: auto auto;
+  gap: 10px;
   margin: 10px 0;
 }
-.card_details ul li{
+.card_details ul li:nth-child(1) {
+  width: 100%;
+  height: 100%;
   padding: 10px;
-  border-radius: 10px;
-  font-size: .75rem;
-  margin: 4px;
+  grid-column: span 6;
+  grid-row: span;
   overflow: hidden;
-  width: 100px;
-  height: auto;
+  border-radius: 20px;
   border: 1px solid #aaa;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-}
-.card_details ul li:nth-child(1){
-  width: 70%;
   padding: 0;
   background: linear-gradient(45deg, #1665f8 0%, #107be5 100%);
 }
-.card_details ul li:nth-child(1) .card_info{
+.card_details ul li:nth-child(1) .card_info {
   width: 100%;
-  display: inline-flex;
-  color: #fff;
-  flex-direction: row;
-}
-.card_details ul li:nth-child(1) .card_info .imgprofile{
-  width: 50%;
-  overflow: hidden;
   height: 150px;
+  display: inline-flex;
+  align-items: flex-start;
+  color: #fff;
 }
-.card_details ul li:nth-child(1) .card_info .imgprofile img{
+.card_details ul li:nth-child(1) .card_info .imgprofile {
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+}
+.card_details ul li:nth-child(1) .card_info .imgprofile img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
-  mix-blend-mode:lighten;
+  object-position: center;
   vertical-align: top;
-  filter: brightness(1.25);
 }
-.card_details ul li:nth-child(1) .card_info .usercap{
+.card_details ul li:nth-child(1) .card_info .usercap {
   padding: 10px;
-  width: 100%;
+  width: 60%;
   text-align: left;
   margin: 10px 0;
 }
-.card_details ul li:nth-child(1) .card_info .usercap .tabs span{
+.card_details ul li:nth-child(1) .card_info .usercap .tabs span {
   display: inline-flex;
   align-items: center;
   padding: 5px;
   border-radius: 25px;
   background-color: #ffffff30;
   border: 2px solid #ddd;
-  margin: 0 5px;
+  outline: none;
+  margin-right: 10px;
+  font-size: 0.625rem;
 }
-.card_details ul li:nth-child(1) .card_info .usercap h2{
+.card_details ul li:nth-child(1) .card_info .usercap h2 {
   font-weight: 600;
   margin: 10px;
+  text-overflow: ellipsis;
+  font-size: 1.25rem;
 }
-.card_details ul li:nth-child(1) .card_info .usercap .caps span{
+.card_details ul li:nth-child(1) .card_info .usercap .caps span {
+  margin: 0 10px;
+  font-size: 0.625rem;
+}
+.card_details ul li:nth-child(2) {
+  grid-column: span 2;
+  grid-row: span;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(45deg, #0f501b 0%, #05b047 100%);
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #aaa;
+  line-height: 1.5rem;
+}
+.card_details ul li:nth-child(2) h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.card_details ul li:nth-child(3) {
+  grid-column: span 3;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+}
+.card_details ul li:nth-child(3) .card_bloodP .icon_card i{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff7f5070;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+}
+.card_details ul li:nth-child(3) .card_bloodP {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.card_details ul li:nth-child(3) .card_bloodP .info_card h4 {
+  font-size: 0.875rem;
+  margin-bottom: 5px;
+}
+.card_details ul li:nth-child(3) .card_bloodP .info_card p{
+  font-size: .75rem;
+}
+.card_details ul li:nth-child(4){
+  grid-column: span 3;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+}
+.card_details ul li:nth-child(4) .card_oxi{
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.card_details ul li:nth-child(4) .card_oxi .icon_card i{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #107be570;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+}
+.card_details ul li:nth-child(4) .card_oxi .info_card h4 {
+  font-size: .875rem;
+  margin-bottom: 5px;
+}
+.card_details ul li:nth-child(4) .card_oxi .info_card p{
+  font-size: .75rem;
+}
+.card_details ul li:nth-child(5){
+  grid-column: span 2;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.card_details ul li:nth-child(5) .icon_card i{
+ display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5101b70;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.25rem; 
+}
+.card_details ul li:nth-child(6){
+  grid-column: span 4;
+  grid-row: span;
+  background-color: #fff;
+  padding: 10px;
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid #aaa;
+  overflow: hidden;
+}
+.card_details ul li:nth-child(6) .group-header h3{
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 0 5px;
+}
+.card_details ul li:nth-child(6) .subtest-list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.card_details ul li:nth-child(6) .subtest-list li{
+  background: #fff;
+  color: #000;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
+  border-radius: 10px;
+}
+.card_details ul li:nth-child(6) .subtest-list li:nth-child(even) i{
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #ff7f5070;
   margin: 0 10px;
 }
-.card_graphic{
+.card_details ul li:nth-child(6) .subtest-list li:nth-child(odd) i{
+  margin: 0 10px;
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #107be570;
+}
+.card_details ul li:nth-child(6) .subtest-list li .test-info h4{
+  font-size: .875rem;
+  line-height: 1rem;
+}
+.card_details ul li:nth-child(6) .subtest-list li .test-info p{
+  font-size: .75rem;
+  line-height: 1rem;
+}
+.card_details ul li:nth-child(7){
+  grid-column: span 4;
+  grid-row: span;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 20px;
+  border: 1px solid #aaa;
+  padding: 10px;
+}
+.card_graphic {
   grid-column: span 2;
+  grid-row: span;
 }

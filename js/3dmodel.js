@@ -6,7 +6,11 @@ let scene, camera, renderer, controls;
 const puntosInteractivos = [
   {
     id: 1,
-    position: new THREE.Vector3(0.10916415449509931, 0.38533473121998285, 0.07106836880200276),
+    position: new THREE.Vector3(
+      0.10916415449509931,
+      0.38533473121998285,
+      0.07106836880200276
+    ),
     info: "Zona cardíaca",
   },
   {
@@ -16,7 +20,7 @@ const puntosInteractivos = [
   },
   {
     id: 3,
-    position: new THREE.Vector3(0.035, 0.823, -0.192),
+    position: new THREE.Vector3(-0.0009231665287703361, 0.8806252717250624, 0.1043349201158524),
     info: "Zona cerebral",
   },
 ];
@@ -36,7 +40,7 @@ export function iniciarEscena(canvasId = "anatomyCanvas") {
   renderer = new THREE.WebGLRenderer({
     canvas: document.getElementById(canvasId),
     antialias: true,
-    alpha: true
+    alpha: true,
   });
 
   const container = document.getElementById(canvasId).parentElement;
@@ -58,36 +62,51 @@ export function iniciarEscena(canvasId = "anatomyCanvas") {
   controls.target.set(0, 0, 0);
   controls.update();
 
+  const canvas = renderer.domElement;
+  canvas.style.cursor = "grab";
+
+  controls.addEventListener("start", () => {
+    canvas.style.cursor = "grabbing";
+  });
+
+  controls.addEventListener("end", () => {
+    canvas.style.cursor = "grab";
+  });
+
   window.addEventListener("resize", ajustarVentana);
   animate();
   const raycaster = new THREE.Raycaster();
   const mouse = new THREE.Vector2();
 
   window.addEventListener("click", (event) => {
-  const canvasBounds = renderer.domElement.getBoundingClientRect();
+    const canvasBounds = renderer.domElement.getBoundingClientRect();
 
-  mouse.x = ((event.clientX - canvasBounds.left) / canvasBounds.width) * 2 - 1;
-  mouse.y = -((event.clientY - canvasBounds.top) / canvasBounds.height) * 2 + 1;
+    mouse.x =
+      ((event.clientX - canvasBounds.left) / canvasBounds.width) * 2 - 1;
+    mouse.y =
+      -((event.clientY - canvasBounds.top) / canvasBounds.height) * 2 + 1;
 
-  raycaster.setFromCamera(mouse, camera);
-  const intersects = raycaster.intersectObjects(scene.children, true);
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(scene.children, true);
 
-  if (intersects.length > 0) {
-    const objeto = intersects[0].object;
-    const puntoImpacto = intersects[0].point;
+    if (intersects.length > 0) {
+      const objeto = intersects[0].object;
+      const puntoImpacto = intersects[0].point;
 
-    const vector2D = puntoImpacto.clone().project(camera);
-    const x = (vector2D.x * 0.5 + 0.5) * canvasBounds.width + canvasBounds.left;
-    const y = (-vector2D.y * 0.5 + 0.5) * canvasBounds.height + canvasBounds.top;
+      const vector2D = puntoImpacto.clone().project(camera);
+      const x =
+        (vector2D.x * 0.5 + 0.5) * canvasBounds.width + canvasBounds.left;
+      const y =
+        (-vector2D.y * 0.5 + 0.5) * canvasBounds.height + canvasBounds.top;
 
-    console.log("🧭 Posición del clic:", puntoImpacto);
-    console.log("🧩 Tocaste:", objeto.name);
+      console.log("🧭 Posición del clic:", puntoImpacto);
+      console.log("🧩 Tocaste:", objeto.name);
 
-    if (objeto.name.startsWith("punto-")) {
-      mostrarPopup(objeto.userData.info, x, y);
+      if (objeto.name.startsWith("punto-")) {
+        mostrarPopup(objeto.userData.info, x, y);
+      }
     }
-  }
-});
+  });
 }
 
 export function cargarModeloAnatomico(path, onLoad) {
@@ -116,7 +135,7 @@ export function cargarModeloAnatomico(path, onLoad) {
         const material = new THREE.MeshBasicMaterial({
           color: 0x000000,
           transparent: true,
-          opacity: 0.5
+          opacity: 0.5,
         });
         const esfera = new THREE.Mesh(geometry, material);
         esfera.position.copy(punto.position);
