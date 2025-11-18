@@ -1,6 +1,10 @@
 import { cargarModeloAnatomico, iniciarEscena } from "./3dmodel.js";
-import { initBody, stepsChart } from "./bodydata.js";
+import { benefitsCarousel } from "./benefits.js";
+import { stepsChart } from "./bodydata.js";
 import { getNotifications, initDashboard, populateHealthTips } from "./dash.js";
+import { helpJS } from "./help.js";
+import { notifies } from "./notify.js";
+import { chartWeek } from "./performance.js";
 
 const routes = {
   "#dashboard": "../pages/views/dashboard.html",
@@ -73,9 +77,24 @@ async function loadContent() {
 
     if (hash === "#bodydata") {
       iniciarEscena("anatomyCanvas");
-      cargarModeloAnatomico("../renders/scene.gltf");
-      initBody();
+      cargarModeloAnatomico("../renders/scene.gltf");      
       stepsChart();
+    }
+
+    if(hash === "#tips"){
+      benefitsCarousel()
+    }
+
+    if(hash === "#help"){
+      helpJS()
+    }
+
+    if(hash==="#performance"){
+      chartWeek()
+    }
+
+    if(hash === "#notifications"){
+      notifies()
     }
 
     if (hash === "#dashboard") {

@@ -1,60 +1,61 @@
-<section class="live-dashboard">
-  <header>
-    <h1>HealthCare Performance</h1>
-    <h2>Monitoreo en Vivo</h2>
-  </header>
+<section class="performance-quick-stats per">
+  <h2>Resumen Rápido</h2>
 
-  <div class="metrics-grid">    
-    <div class="metric-card">
-      <div class="metric-header">
-        <i class="bx bx-heart icon blue"></i>
-        <h2>Frecuencia Cardíaca</h2>
-        <span class="live-value" id="live-heart">-- bpm</span>
-      </div>
-      <canvas id="heartChart"></canvas>
-      <ul class="history-list" id="heartHistory">
-        <li>78 bpm — Hoy 10:30 AM</li>
-        <li>82 bpm — Ayer 9:45 PM</li>
-      </ul>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>Calorías</h3>
+      <p class="stat-value">523 kcal</p>
     </div>
 
-    <div class="metric-card">
-      <div class="metric-header">
-        <i class="bx bx-droplet icon orange"></i>
-        <h2>Oxigenación</h2>
-        <span class="live-value" id="live-oxygen">-- %</span>
-      </div>
-      <canvas id="oxygenChart"></canvas>
-      <ul class="history-list" id="oxygenHistory">
-        <li>97% — Hoy 10:30 AM</li>
-        <li>96% — Ayer 9:45 PM</li>
-      </ul>
+    <div class="stat-card">
+      <h3>Tiempo Activo</h3>
+      <p class="stat-value">1h 32m</p>
     </div>
 
-    <div class="metric-card">
-      <div class="metric-header">
-        <i class="bx bx-water icon blue"></i>
-        <h2>Hidratación</h2>
-        <span class="live-value" id="live-hydration">-- %</span>
-      </div>
-      <canvas id="hydrationChart"></canvas>
-      <ul class="history-list" id="hydrationHistory">
-        <li>65% — Hoy 10:30 AM</li>
-        <li>58% — Ayer 9:45 PM</li>
-      </ul>
+    <div class="stat-card">
+      <h3>Ritmo Cardíaco</h3>
+      <p class="stat-value">124 bpm</p>
     </div>
 
-    <div class="metric-card">
-      <div class="metric-header">
-        <i class="bx bx-fire icon orange"></i>
-        <h2>Calorías Quemadas</h2>
-        <span class="live-value" id="live-calories">-- kcal</span>
-      </div>
-      <canvas id="caloriesChart"></canvas>
-      <ul class="history-list" id="caloriesHistory">
-        <li>320 kcal — Hoy 10:30 AM</li>
-        <li>540 kcal — Ayer 9:45 PM</li>
-      </ul>
+    <div class="stat-card">
+      <h3>Entrenamientos</h3>
+      <p class="stat-value">2</p>
     </div>
   </div>
+</section>
+<section class="performance-graph per">
+  <h2>Progreso Semanal</h2>
+
+  <div class="graph-container">
+    <canvas id="weeklyChart"></canvas>
+  </div>
+</section>
+<section class="performance-history per">
+  <h2>Historial</h2>
+
+  <div class="history-list">
+    <div class="history-item">
+      <span class="day">Lunes</span>
+      <span class="data">612 kcal • 3.4 km • 1h 12m</span>
+    </div>
+
+    <div class="history-item">
+      <span class="day">Domingo</span>
+      <span class="data">428 kcal • 2.1 km • 43m</span>
+    </div>
+
+    <div class="history-item">
+      <span class="day">Sábado</span>
+      <span class="data">885 kcal • 6.2 km • 1h 55m</span>
+    </div>
+  </div>
+</section>
+<section class="performance-highlights per">
+  <h2>Highlights del Día</h2>
+
+  <ul class="highlights-list">
+    <li>🔥 Nuevo récord personal: 6.2 km</li>
+    <li>💧 Nivel de hidratación óptimo</li>
+    <li>💤 Buen descanso: 7h 48m</li>
+  </ul>
 </section>

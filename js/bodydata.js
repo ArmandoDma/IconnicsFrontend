@@ -1,51 +1,3 @@
-export function initBody(){
-    const ctx = document.getElementById("bodyChart").getContext("2d");
-
-new Chart(ctx, {
-  type: "bar",
-  data: {
-    labels: [
-      "Masa muscular",
-      "Grasa corporal",
-      "Agua corporal",
-      "Densidad ósea",
-      "Metabolismo basal"
-    ],
-    datasets: [{
-      label: "Composición corporal",
-      data: [42, 18, 60, 100, 1600],
-      backgroundColor: [
-        "#4CAF50",
-        "#F44336",
-        "#2196F3",
-        "#FF9800",
-        "#9C27B0"
-      ],
-      borderRadius: 6
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        callbacks: {
-          label: (ctx) => `${ctx.label}: ${ctx.raw}${ctx.label === "Metabolismo basal" ? " kcal/día" : "%"}`,
-        }
-      }
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-        ticks: {
-          callback: (value) => value + (value > 200 ? " kcal" : "%")
-        }
-      }
-    }
-  }
-});
-}
-
 export function stepsChart (){
   const stepsCompleted = 7200;
   const stepsGoal = 10000;
@@ -98,4 +50,80 @@ export function stepsChart (){
       }
     }]
   });
+};
+
+export function renderOrganCardsByZone(zoneId) {
+  const organZones = {
+    1: {
+      icon: "../../images/heart.png",
+      title: "Corazón",
+      metrics: [
+        { label: "Frecuencia cardíaca", value: "78 bpm" },
+        { label: "HRV", value: "52 ms" },
+        { label: "Presión arterial", value: "120/80 mmHg" },
+        { label: "Ritmo", value: "Normal" }
+      ]
+    },
+    2: {
+      icon: "../../images/lungs.png",
+      title: "Pulmones",
+      metrics: [
+        { label: "Frecuencia respiratoria", value: "16 rpm" },
+        { label: "Oxigenación", value: "97%" }
+      ]
+    },
+    3: {
+      icon: "../../images/brain.png",
+      title: "Cerebro",
+      metrics: [
+        { label: "Calidad del sueño", value: "Alta" },
+        { label: "Fatiga mental", value: "Baja" }
+      ]
+    },
+    4: {
+      icon: "../../images/hydration.png",
+      title: "Hidratación",
+      metrics: [
+        { label: "Agua corporal", value: "58%" },
+        { label: "Color de orina", value: "Claro" }
+      ]
+    }
+  };
+
+  const data = organZones[zoneId];
+  if (!data) return;
+
+  const container = document.getElementById("card_graphic");
+  if (!container) return;
+  container.innerHTML = "";
+
+  const card = document.createElement("div");
+  card.className = "card_graphic_container";
+
+  const iconDiv = document.createElement("div");
+  iconDiv.className = "icon";
+  const img = document.createElement("img");
+  img.src = data.icon;
+  img.alt = `${data.title} icon`;
+  img.id = "image_organ";
+  iconDiv.appendChild(img);
+
+  const infoDiv = document.createElement("div");
+  infoDiv.className = "info_body_organ";
+
+  const title = document.createElement("h3");
+  title.textContent = data.title;
+  infoDiv.appendChild(title);
+
+  const ul = document.createElement("ul");
+  data.metrics.forEach(metric => {
+    const li = document.createElement("li");
+    li.innerHTML = `${metric.label}: <strong>${metric.value}</strong>`;
+    ul.appendChild(li);
+  });
+
+  infoDiv.appendChild(ul);
+  card.appendChild(iconDiv);
+  card.appendChild(infoDiv);
+  container.appendChild(card);
 }

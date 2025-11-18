@@ -1,6 +1,7 @@
 import * as THREE from "https://esm.sh/three";
 import { OrbitControls } from "https://esm.sh/three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "https://esm.sh/three/examples/jsm/loaders/GLTFLoader.js";
+import { renderOrganCardsByZone } from "./bodydata.js";
 
 let scene, camera, renderer, controls;
 const puntosInteractivos = [
@@ -20,8 +21,21 @@ const puntosInteractivos = [
   },
   {
     id: 3,
-    position: new THREE.Vector3(-0.0009231665287703361, 0.8806252717250624, 0.1043349201158524),
+    position: new THREE.Vector3(
+      -0.0009231665287703361,
+      0.8806252717250624,
+      0.1043349201158524
+    ),
     info: "Zona cerebral",
+  },
+  {
+    id: 4,
+    position: new THREE.Vector3(
+      0.001583757474844072,
+      0.6807567474542069,
+      0.12441124862387741
+    ),
+    info: "Zona Hidratación",
   },
 ];
 
@@ -104,6 +118,13 @@ export function iniciarEscena(canvasId = "anatomyCanvas") {
 
       if (objeto.name.startsWith("punto-")) {
         mostrarPopup(objeto.userData.info, x, y);
+      }
+
+      if (objeto.name.startsWith("punto-")) {
+        mostrarPopup(objeto.userData.info, x, y);
+
+        const puntoId = parseInt(objeto.name.split("-")[1]);
+        renderOrganCardsByZone(puntoId);
       }
     }
   });

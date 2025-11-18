@@ -14,11 +14,13 @@ lnks.forEach((ln) => {
   });
 });
 
+/*notification button */
 let toggleBtn = document.getElementById("noti_btn");
 toggleBtn.addEventListener("click", () => {
-  alert("No new notifications");
+  window.location.assign("#notifications")
 });
 
+/*logout btn*/
 let logoutBtn = document.getElementById("logout");
 let ovrly = document.getElementById("ovrly");
 let number = document.getElementById("number");
