@@ -1,12 +1,42 @@
 const CACHE_NAME = "iconnics-cache-v1";
 const APP_SHELL = [
   "./index.html",
-  "login.html",
-  "register.html",
+  "./pages/login.html",
+  "./pages/register.html",
+  "./pages/views/benefits.html",
+  "./pages/view/dashboard.html",
+  "./pages/view/performance.html",
+  "./pages/view/settings.html",
+  "./pages/view/help.html",
+  "./pages/view/benefits.html",
+  "./pages/view/bodydata.html",
+  "./pages/view/notifications.html",
+
 
   // JS y CSS
   "../js/index.js",
+  "../js/3dmodel.js",
+  "../js/api.js",
+  "../js/auth.js",
+  "../js/benefits.js",
+  "../js/bodydata.js",
+  "../js/dash.js",
+  "../js/help.js",
+  "../js/index.js",
+  "../js/login.js",
+  "../js/main.js",
+  "../js/notify.js",
+  "../js/performance.js",
+  "../js/register.js",
+  "../js/router.js",
+  "../js/tips.js",
   "../css/styles.css",
+  "../css/fonts.css",
+  "../css/loader.css",
+  "../css/login.css",
+  "../css/main.css",
+  "../css/radar.css",
+
 
   // Imágenes y favicon
   "../images/iconnics_logo.png",

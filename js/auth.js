@@ -53,7 +53,7 @@ export const manejarRegister = async (
   const deporteRegex = /^[A-Za-z\s]{2,}$/;
   const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
-  const rolesValidos = ["Coach", "Deportist"];
+  const rolesValidos = ["Entrenador", "Deportista"];
 
   if (!nombreRegex.test(nombre))
     return showError(
