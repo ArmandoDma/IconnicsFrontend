@@ -6,8 +6,8 @@
     <title>Iconnics - Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="../js/router.js"></script>
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#297bef">
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#297bef" />
     <link
       href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
       rel="stylesheet"
@@ -22,6 +22,70 @@
   <body>
     <div class="ct_dash">
       <header class="hdr">
+        <!-- Nav móvil / tablet -->
+        <nav class="mobile-nav">
+          <div class="nav-left">
+            <button class="menu-btn">&#9776;</button>
+          </div>
+          <div class="nav-center">
+            <h1>Iconnics</h1>
+          </div>
+          <div class="nav-right">
+            <img
+              src="../images/dma_oxidao.jpg"
+              alt="Usuario"
+              class="user-img"
+            />
+          </div>
+        </nav>
+
+        <!-- Menú deslizable móvil -->
+        <div class="side-menu" id="sideMenu">
+          <div class="menu-header">
+            <img
+              src="../images/dma_oxidao.jpg"
+              alt="Usuario"
+              class="menu-user-img"
+            />
+            <span>Hola, Armando</span>
+          </div>
+          <ul class="menu-items">
+            <!-- Links principales -->
+            <li>
+              <a href="#dashboard"
+                ><i class="bx bxs-dashboard"></i> Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="#performance"
+                ><i class="bx bx-dumbbell"></i> Performance</a
+              >
+            </li>
+            <li>
+              <a href="#bodydata"><i class="bx bx-body"></i> Body Data</a>
+            </li>
+            <li>
+              <a href="#tips"><i class="bxr bx-light-bulb-alt"></i> Benefits</a>
+            </li>
+
+            <!-- Links secundarios -->
+            <li>
+              <a href="#settings"><i class="bxr bx-cog"></i> Settings</a>
+            </li>
+            <li>
+              <a href="#help"><i class="bxr bx-handshake"></i> Help</a>
+            </li>
+            <li>
+              <a href="#logout"
+                ><i class="bxr bx-arrow-out-right-square-half"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay" id="overlay"></div>
+
         <nav class="nv_hdr">
           <ul>
             <li>
@@ -103,7 +167,7 @@
         </nav>
       </aside>
       <main class="mn" id="main-content"></main>
-      
+
       <div id="ovrly" class="overlay">
         <div class="ct_ovr">
           <div class="imgbox">

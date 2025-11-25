@@ -40,3 +40,17 @@ logoutBtn.addEventListener("click", () => {
     }
   }, 1000);
 });
+
+const menuBtn = document.querySelector(".menu-btn");
+const sideMenu = document.getElementById("sideMenu");
+const overlay = document.getElementById("overlay");
+
+menuBtn.addEventListener("click", () => {
+  sideMenu.classList.toggle("open");
+  overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+  sideMenu.classList.remove("open");
+  overlay.classList.remove("active");
+});

@@ -5,73 +5,6 @@
   box-sizing: border-box;
 }
 
-/*responsive section*/
-/* --- Ocultar el menú mobile por defecto --- */
-.mobile_nav,
-.mobile_sidebar {
-  display: none;
-}
-
-/* --- MOBILE: cuando la pantalla sea menor a 900px --- */
-@media (max-width: 900px) {
-
-  /* Ocultar tu layout completo */
-  .ct_dash {
-    display: none;
-  }
-
-  /* Mostrar el menú mobile */
-  .mobile_nav {
-    display: flex;
-    align-items: center;
-    height: 60px;
-    background: #f3f3f3;
-    padding: 0 15px;
-    gap: 10px;
-  }
-
-  .mobile_nav button {
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-  }
-
-  .mobile_sidebar {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100%;
-    background: #fff;
-    padding: 20px;
-    transition: left .3s;
-    z-index: 1000;
-  }
-
-  .mobile_sidebar.open {
-    left: 0;
-  }
-
-  .mobile_sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .mobile_sidebar ul li a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 15px 0;
-    font-size: 1rem;
-    color: #000;
-    text-decoration: none;
-  }
-
-}
-
-/**/
-
 body {
   font-family: "Outfit", sans-serif;
   background-color: #fff;
@@ -91,10 +24,149 @@ body {
 }
 .ct_dash .hdr {
   grid-area: hdr;
-  width: 100%;
+  width: 100%;  
   min-height: 100%;
+  overflow: hidden;
   background-color: #f3f3f3;
 }
+/* --- Estilos base para mobile-nav --- */
+.mobile-nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #297bef;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  position: relative;
+  z-index: 1001;
+}
+
+/* Botón de menú */
+.menu-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Centro con título */
+.mobile-nav .nav-center h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Imagen de usuario */
+.mobile-nav .nav-right .user-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* --- Side menu --- */
+.side-menu {
+  position: fixed;
+  top: calc(10% - 20px);
+  left: -250px; /* oculto por defecto */
+  width: 250px;
+  height: 100%;
+  background-color: #1b1b1b;
+  color: #fff;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Menú abierto */
+.side-menu.open {
+  left: 0;
+}
+
+/* Header dentro del side menu */
+.side-menu .menu-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.side-menu .menu-header .menu-user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Lista de enlaces */
+.side-menu .menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu .menu-items li {
+  margin: 0.5rem 0;
+}
+
+.side-menu .menu-items li a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.side-menu .menu-items li a:hover {
+  background-color: #297bef;
+  border-radius: 5px;
+}
+
+/* Íconos en enlaces */
+.side-menu .menu-items li a i {
+  font-size: 1.2rem;
+}
+
+/* --- Overlay --- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+/* Overlay activo */
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- Ocultar menú móvil en desktop --- */
+@media (min-width: 1024px) {
+  .mobile-nav,
+  .side-menu {
+    display: none;
+  }
+}
+/**/
 .ct_dash .hdr .nv_hdr {
   width: 100%;
   height: 100%;
@@ -638,9 +710,9 @@ body {
 }
 /*performance section*/
 :root {
-  --primary: #0057ff;   /* azul */
-  --accent: #ff7a00;    /* naranja */
-  --bg: #ffffff;        /* blanco */
+  --primary: #0057ff; /* azul */
+  --accent: #ff7a00; /* naranja */
+  --bg: #ffffff; /* blanco */
   --text: #222;
   --border: #e6e6e6;
 }
@@ -726,7 +798,6 @@ body {
   border-radius: 8px;
   margin-bottom: 10px;
 }
-
 
 /*bodydata section*/
 .dmodel {
@@ -866,7 +937,7 @@ body {
   border: 1px solid #aaa;
   border-radius: 10px;
 }
-.card_details ul li:nth-child(3) .card_bloodP .icon_card i{
+.card_details ul li:nth-child(3) .card_bloodP .icon_card i {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -885,23 +956,23 @@ body {
   font-size: 0.875rem;
   margin-bottom: 5px;
 }
-.card_details ul li:nth-child(3) .card_bloodP .info_card p{
-  font-size: .75rem;
+.card_details ul li:nth-child(3) .card_bloodP .info_card p {
+  font-size: 0.75rem;
 }
-.card_details ul li:nth-child(4){
+.card_details ul li:nth-child(4) {
   grid-column: span 3;
   background: #fff;
   padding: 10px;
   border: 1px solid #aaa;
   border-radius: 10px;
 }
-.card_details ul li:nth-child(4) .card_oxi{
+.card_details ul li:nth-child(4) .card_oxi {
   width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: space-evenly;
 }
-.card_details ul li:nth-child(4) .card_oxi .icon_card i{
+.card_details ul li:nth-child(4) .card_oxi .icon_card i {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -911,13 +982,13 @@ body {
   font-size: 1.25rem;
 }
 .card_details ul li:nth-child(4) .card_oxi .info_card h4 {
-  font-size: .875rem;
+  font-size: 0.875rem;
   margin-bottom: 5px;
 }
-.card_details ul li:nth-child(4) .card_oxi .info_card p{
-  font-size: .75rem;
+.card_details ul li:nth-child(4) .card_oxi .info_card p {
+  font-size: 0.75rem;
 }
-.card_details ul li:nth-child(5){
+.card_details ul li:nth-child(5) {
   grid-column: span 2;
   background: #fff;
   padding: 10px;
@@ -927,16 +998,16 @@ body {
   align-items: center;
   justify-content: center;
 }
-.card_details ul li:nth-child(5) .icon_card i{
- display: inline-flex;
+.card_details ul li:nth-child(5) .icon_card i {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: #e5101b70;
   padding: 10px;
   border-radius: 50%;
-  font-size: 1.25rem; 
+  font-size: 1.25rem;
 }
-.card_details ul li:nth-child(6){
+.card_details ul li:nth-child(6) {
   grid-column: span 4;
   grid-row: span;
   background-color: #fff;
@@ -946,18 +1017,18 @@ body {
   border: 1px solid #aaa;
   overflow: hidden;
 }
-.card_details ul li:nth-child(6) .group-header h3{
+.card_details ul li:nth-child(6) .group-header h3 {
   font-size: 1.125rem;
   font-weight: 600;
   padding: 0 5px;
 }
-.card_details ul li:nth-child(6) .subtest-list{
+.card_details ul li:nth-child(6) .subtest-list {
   width: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
-.card_details ul li:nth-child(6) .subtest-list li{
+.card_details ul li:nth-child(6) .subtest-list li {
   background: #fff;
   color: #000;
   padding: 10px;
@@ -968,7 +1039,7 @@ body {
   text-align: left;
   border-radius: 10px;
 }
-.card_details ul li:nth-child(6) .subtest-list li:nth-child(even) i{
+.card_details ul li:nth-child(6) .subtest-list li:nth-child(even) i {
   font-size: 1.25rem;
   display: inline-flex;
   align-items: center;
@@ -978,7 +1049,7 @@ body {
   background-color: #ff7f5070;
   margin: 0 10px;
 }
-.card_details ul li:nth-child(6) .subtest-list li:nth-child(odd) i{
+.card_details ul li:nth-child(6) .subtest-list li:nth-child(odd) i {
   margin: 0 10px;
   font-size: 1.25rem;
   display: inline-flex;
@@ -988,15 +1059,15 @@ body {
   border-radius: 50%;
   background-color: #107be570;
 }
-.card_details ul li:nth-child(6) .subtest-list li .test-info h4{
-  font-size: .875rem;
+.card_details ul li:nth-child(6) .subtest-list li .test-info h4 {
+  font-size: 0.875rem;
   line-height: 1rem;
 }
-.card_details ul li:nth-child(6) .subtest-list li .test-info p{
-  font-size: .75rem;
+.card_details ul li:nth-child(6) .subtest-list li .test-info p {
+  font-size: 0.75rem;
   line-height: 1rem;
 }
-.card_details ul li:nth-child(7){
+.card_details ul li:nth-child(7) {
   grid-column: span 4;
   grid-row: span;
   width: 100%;
@@ -1009,11 +1080,11 @@ body {
   border: 1px solid #aaa;
   padding: 10px;
 }
-.card_graphic{
+.card_graphic {
   width: 100%;
   height: 300px;
   grid-column: span 2;
-  grid-row: span;  
+  grid-row: span;
   background: linear-gradient(45deg, #fff 0%, #e5e5e5 100%);
   padding: 1.5rem;
   border: 1px solid #aaa;
@@ -1022,7 +1093,7 @@ body {
   display: flex;
   align-items: center;
 }
-.card_graphic .card_graphic_container{
+.card_graphic .card_graphic_container {
   min-width: 100%;
   min-height: 100%;
   padding: 1.5rem;
@@ -1031,249 +1102,249 @@ body {
   justify-content: center;
   overflow: hidden;
 }
-.card_graphic .card_graphic_container .icon{
+.card_graphic .card_graphic_container .icon {
   width: 50%;
   overflow: hidden;
 }
-.card_graphic .card_graphic_container .icon img{
+.card_graphic .card_graphic_container .icon img {
   width: 200px;
   height: 200px;
   object-fit: cover;
   object-position: center;
   vertical-align: top;
 }
-.card_graphic .card_graphic_container .info_body_organ{
+.card_graphic .card_graphic_container .info_body_organ {
   width: 50%;
   height: 100%;
   overflow: hidden;
 }
 
-.card_graphic .card_graphic_container .info_body_organ h3{
+.card_graphic .card_graphic_container .info_body_organ h3 {
   font-size: 2rem;
 }
 /* ===== BENEFITS SECTION ===== */
 .benefits-carousel {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 35px;
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 35px;
 }
 
 .benefit-slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: 0.5s ease;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
 }
 
 .benefit-slide.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 .benefit-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    vertical-align: top;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  vertical-align: top;
 }
 
 .slide-text {
-    position: absolute;
-    bottom: 20px;
-    left: 30px;
-    color: #fff;
-    text-shadow: 0px 3px 10px rgba(0,0,0,0.6);
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: #fff;
+  text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.6);
 }
 
 .slide-text h2 {
-    font-size: 28px;
-    font-weight: 700;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 .slide-text p {
-    font-size: 16px;
-    opacity: 0.9;
+  font-size: 16px;
+  opacity: 0.9;
 }
 
 .carousel-controls {
-    position: absolute;
-    top: calc(50% - 20px);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
+  position: absolute;
+  top: calc(50% - 20px);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 
 .control {
-    font-size: 36px;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .control:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* ===== BENEFITS CARDS ===== */
 .benefits-title {
-    font-size: 26px;
-    margin-bottom: 20px;
-    font-weight: 600;
-    color: #2b2b2b;
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #2b2b2b;
 }
 
 .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
 }
 
 .benefit-card {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: 0.25s ease;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: 0.25s ease;
 }
 
 .benefit-card i {
-    font-size: 45px;
-    color: #1665f8;
-    margin-bottom: 10px;
+  font-size: 45px;
+  color: #1665f8;
+  margin-bottom: 10px;
 }
 
 .benefit-card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-    color: #333;
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #333;
 }
 
 .benefit-card p {
-    font-size: 14px;
-    color: #666;
+  font-size: 14px;
+  color: #666;
 }
 
 .benefit-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 /*help page*/
 /* CONTAINER GENERAL */
 .help-header {
-    text-align: center;
-    margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .help-header h1 {
-    font-size: 34px;
-    color: #2c2c2c;
+  font-size: 34px;
+  color: #2c2c2c;
 }
 
 .help-header p {
-    font-size: 16px;
-    color: #6a6a6a;
+  font-size: 16px;
+  color: #6a6a6a;
 }
 
 /* BUSCADOR */
 .help-search {
-    margin: 22px auto;
-    width: 60%;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    padding: 12px 16px;
-    border-radius: 14px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  margin: 22px auto;
+  width: 60%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
 
 .help-search i {
-    font-size: 20px;
-    color: #7a7a7a;
-    margin-right: 10px;
+  font-size: 20px;
+  color: #7a7a7a;
+  margin-right: 10px;
 }
 
 .help-search input {
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 15px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
 }
 
 /* QUICK ACCESS */
 .quick-access {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-    margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
 }
 
 .qa-card {
-    background: white;
-    padding: 24px;
-    border-radius: 18px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    transition: 0.3s ease;
+  background: white;
+  padding: 24px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
 }
 
 .qa-card i {
-    font-size: 48px;
-    color: #ff7f50;
-    margin-bottom: 10px;
+  font-size: 48px;
+  color: #ff7f50;
+  margin-bottom: 10px;
 }
 
 .qa-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 7px 20px rgba(0,0,0,0.09);
+  transform: translateY(-6px);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.09);
 }
 
 /* FAQ */
 .faq-section h2 {
-    margin-bottom: 20px;
-    font-size: 26px;
-    color: #2c2c2c;
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #2c2c2c;
 }
 
 .faq-item {
-    background: white;
-    padding: 20px;
-    margin-bottom: 12px;
-    border-radius: 14px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+  background: white;
+  padding: 20px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
 }
 
 .faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
 .faq-question h3 {
-    font-size: 17px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .faq-question i {
-    font-size: 20px;
-    color: #ff7f50;
+  font-size: 20px;
+  color: #ff7f50;
 }
 
 .faq-answer {
-    display: none;
-    margin-top: 10px;
-    font-size: 15px;
-    color: #555;
-    line-height: 1.6;
+  display: none;
+  margin-top: 10px;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
 }
 /*settings page*/
 /* ---- GENERAL ---- */
@@ -1345,10 +1416,9 @@ body {
 
 .setting-select:focus {
   border-color: #1a73e8;
-  box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
   outline: none;
 }
-
 
 /* ---- SWITCH ---- */
 .switch {
@@ -1469,13 +1539,13 @@ input:checked + .slider:before {
   border: 1px solid #e5e9f0;
   border-radius: 12px;
   padding: 1rem;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
   transition: 0.2s;
 }
 
 .notif-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* ICONOS */
@@ -1508,4 +1578,177 @@ input:checked + .slider:before {
   color: #999;
   margin-top: 0.4rem;
   display: block;
+}
+
+/* ===== RESPONSIVE DASHBOARD ===== */
+@media (max-width: 1200px) {
+  .ct_dash {
+    grid-template-rows: 70px auto;
+    grid-template-columns: 200px auto;
+  }
+
+  .ct_dash .hdr .nv_hdr ul:nth-child(1) li input[type="search"] {
+    width: 200px;
+  }
+
+  .metrics_section {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .card_details ul {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .card_graphic .card_graphic_container .icon img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .benefits-carousel {
+    height: 300px;
+  }
+
+  .benefits-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 992px) {
+  .ct_dash {
+    grid-template-columns: 60px auto;
+  }
+
+  .ct_dash .asi .asi_nav .nav .logo li a {
+    font-size: 1.5rem;
+    padding-left: 10px;
+  }
+
+  .ct_dash .hdr .nv_hdr ul:nth-child(1) li input[type="search"] {
+    width: 150px;
+  }
+
+  .metrics_section .metric_card p {
+    font-size: 2rem;
+  }
+
+  .card_details ul li:nth-child(1) .card_info .imgprofile {
+    width: 35%;
+  }
+
+  .card_details ul li:nth-child(1) .card_info .usercap {
+    width: 65%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ct_dash {
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px auto auto;
+    grid-template-areas:
+      "hdr"
+      "asi"
+      "main";
+  }
+
+  .ct_dash .hdr .nv_hdr ul:nth-child(1) {
+    display: none; /* ocultamos búsqueda para pantallas pequeñas */
+  }
+
+  .ct_dash .asi {
+    display: none;
+    height: auto;
+  }
+
+  .metrics_section {
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
+
+  .card_details ul {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics_section .tips,
+  .metrics_section .notify {
+    width: 100%;
+    max-height: none; 
+    min-height: 300px;
+    height: auto;
+  }
+  .metrics_section .tips{
+    grid-column: span 2;
+    grid-row: 4;
+  }
+
+  .metrics_section .notify{
+    grid-column: span 2;
+    grid-row: 5;
+  }
+
+  .card_graphic {
+    height: 250px;
+  }
+
+  .benefits-carousel {
+    height: 250px;
+  }
+
+  .benefit-card h3 {
+    font-size: 18px;
+  }
+
+  .help-search {
+    width: 90%;
+  }
+
+  .quick-access {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .ct_dash .asi .asi_nav {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+  }
+
+  .ct_dash .asi .asi_nav .nav .links li {
+    padding: 10px;
+  }
+
+  .metrics_section .tips,
+  .metrics_section .notify {
+    max-height: 200px;
+  }
+
+  .card_details ul li:nth-child(1) .card_info .usercap h2 {
+    font-size: 1rem;
+  }
+
+  .card_graphic .card_graphic_container .icon img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .benefits-carousel {
+    height: 200px;
+  }
+
+  .benefits-title {
+    font-size: 20px;
+  }
+
+  .help-header h1 {
+    font-size: 28px;
+  }
+
+  .help-search input {
+    font-size: 14px;
+  }
+
+  .faq-section h2 {
+    font-size: 22px;
+  }
 }
