@@ -20,7 +20,6 @@ export const manejarLogin = async (correo, contrasena) => {
   try {
     const { token, mensaje } = await loginUsuario(correo, contrasena);
     localStorage.setItem("token", token);
-    alert(JSON.stringify(token));
     window.location.href = "../pages/main.html#";
   } catch (error) {
     alert(error);
