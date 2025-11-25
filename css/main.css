@@ -4,6 +4,74 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+/*responsive section*/
+/* --- Ocultar el menú mobile por defecto --- */
+.mobile_nav,
+.mobile_sidebar {
+  display: none;
+}
+
+/* --- MOBILE: cuando la pantalla sea menor a 900px --- */
+@media (max-width: 900px) {
+
+  /* Ocultar tu layout completo */
+  .ct_dash {
+    display: none;
+  }
+
+  /* Mostrar el menú mobile */
+  .mobile_nav {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background: #f3f3f3;
+    padding: 0 15px;
+    gap: 10px;
+  }
+
+  .mobile_nav button {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+  }
+
+  .mobile_sidebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    padding: 20px;
+    transition: left .3s;
+    z-index: 1000;
+  }
+
+  .mobile_sidebar.open {
+    left: 0;
+  }
+
+  .mobile_sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mobile_sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    font-size: 1rem;
+    color: #000;
+    text-decoration: none;
+  }
+
+}
+
+/**/
+
 body {
   font-family: "Outfit", sans-serif;
   background-color: #fff;

@@ -67,9 +67,26 @@ noti.addEventListener("click", () => {
   clickCount++;
 });
 
+const btn = document.querySelector(".m_menu_btn");
+const menu = document.getElementById("mobileMenu");
+
+let overlay = document.createElement("div");
+overlay.classList.add("menu_overlay");
+document.body.appendChild(overlay);
+
+btn.addEventListener("click", () => {
+  menu.classList.toggle("active");
+  overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
+});
+
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("/serviceWorker.js") 
+    .register("/serviceWorker.js")
     .then((reg) => console.log("SW registrado:", reg.scope))
     .catch((err) => console.error("Error registrando SW:", err));
 }

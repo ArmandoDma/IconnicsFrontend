@@ -1,204 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iconnics - Ready to crush it today?</title>
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#297bef">
-    <link rel="shortcut icon" href="../images/iconnics_logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
-</head>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#297bef" />
+    <link
+      rel="shortcut icon"
+      href="../images/iconnics_logo.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="home_ct">
-        <header class="ct_hdr">
-            <div class="hdr_logo">
-                <img src="../images/iconnics_logo.png" alt="Iconnics Logo">
-                <p>Iconnics <span>Measuring Your Limits.</span></p>
-            </div>
-            <nav class="hdr_nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#features">What It Tracks</a></li>
-                    <li><a href="#sync">Connect Your Watch</a></li>
-                    <li><a href="#alerts">Tips & Alerts</a></li>
-                    <li><a href="#support">Support</a></li>
-
-                </ul>
-                <ul>
-                    <li><a href="/pages/login.html">Sign In</a></li>
-                    <li><a href="/pages/register.html">Sign Up</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="vid_ct">
-            <div class="caption_vid">
-                <h1>This is where <span></span> Iconns are built.</h1>
-                <div class="ct_btns_vid">
-                    <a href="#" class="btn_vid">Get Started</a>
-                    <a href="#" class="btn_vid">Learn More</a>
-                </div>
-            </div>
-            <div class="iphone_dinamic">
-                <div class="island" id="island">
-                    <div class="noti_island">
-                        <div class="icon_app"><img src="../images/iconnics_logo.png" alt=""></div>
-
-                        <div class="noti_cap">
-                            <p><strong>Iconnics</strong> <span> • 1m</span></p>
-                            <p>You haven't logged water in 3 hours. Stay fresh!</p>
-                        </div>
-                    </div>
-                    <audio src="../audios/Note-iPhone.mp3" id="noti_motion"></audio>
-                </div>
-                <div class="cntnt">
-                    <video src="../videos/men_gym.mp4" muted loop autoplay></video>
-                </div>
-            </div>
+      <header class="ct_hdr nav_desktop">
+        <div class="hdr_logo">
+          <img src="../images/iconnics_logo.png" alt="Iconnics Logo" />
+          <p>Iconnics <span>Measuring Your Limits.</span></p>
         </div>
-        <div class="carousel_quotes">
-            <div class="quote_ct">
-                <div class="quote">
-                    <p>Your body doesn't lie—listen before it shouts.</p>
-                </div>
-                <div class="quote">
-                    <p>Icons aren't born. They're built.</p>
-                </div>
-                <div class="quote">
-                    <p>Every stat tells a story. Make yours iconic.</p>
-                </div>
-            </div>
+        <nav class="hdr_nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#features">What It Tracks</a></li>
+            <li><a href="#sync">Connect Your Watch</a></li>
+            <li><a href="#alerts">Tips & Alerts</a></li>
+            <li><a href="#support">Support</a></li>
+          </ul>
+          <ul>
+            <li><a href="/pages/login.html">Sign In</a></li>
+            <li><a href="/pages/register.html">Sign Up</a></li>
+          </ul>
+        </nav>
+      </header>
+      <header class="nav_mobile">
+        <div class="m_logo">
+          <img src="../images/iconnics_logo.png" alt="Iconnics Logo" />
+          <p>Iconnics</p>
         </div>
-        <div class="features" id="features">
-            <div class="tracks">
-                <div class="slctor_tracks">
-                    <h2>Our Measures Services</h2>
-                    <ul class="item_slctor">
-                        <li class="measure active">Heart Rate</li>
-                        <li class="measure">Oxygenation</li>
-                        <li class="measure">Hydratation</li>
-                        <li class="measure">Stress</li>
-                        <li class="measure">Sleep</li>
-                        <li class="measure">Movement</li>
-                    </ul>
-                    <ul class="notes">
-                        <li>
-                            <p><strong>Note: </strong> Each metric you select reveals real-time insights and visuals
-                                that help you understand your body's rhythm and recovery.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="imgs_tracks">
-                    <div class="measures active">
-                        <div class="item_img"><img src="../images/heart.jpg" alt=""></div>
-                        <div class="item_img"><img src="../images/rate_heart.jpg" alt=""></div>
-                        <div class="bubble">
-                            <i class="bx bx-info-circle"></i>
-                            <h3>Your rhythm, your signal.</h3>
-                            <p>Track beats per minute to detect stress, physical effort, or irregularities.</p>
-                        </div>
-                    </div>
 
-                    <div class="measures">
-                        <div class="item_img"><img src="../images/blood.jpg" alt=""></div>
-                        <div class="item_img"><img src="../images/blood_globes.jpg" alt=""></div>
-                        <div class="bubble">
-                            <i class="bx bx-info-circle"></i>
-                            <h3>Breathe with clarity.</h3>
-                            <p>Measure blood oxygen levels to ensure your body's absorbing what it needs.</p>
-                        </div>
-                    </div>
+        <button class="m_menu_btn">
+          <i class="bx bx-menu"></i>
+        </button>
 
-                    <div class="measures">
-                        <div class="item_img"><img src="../images/hydrate.avif" alt=""></div>
-                        <div class="item_img"><img src="../images/water.avif" alt=""></div>
-                        <div class="bubble">
-                            <i class="bx bx-info-circle"></i>
-                            <h3>Stay fluid.</h3>
-                            <p>Detect signs of dehydration and maintain optimal water balance.</p>
-                        </div>
-                    </div>
+        <nav class="m_menu" id="mobileMenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#features">What It Tracks</a></li>
+            <li><a href="#sync">Connect Your Watch</a></li>
+            <li><a href="#alerts">Tips & Alerts</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="/pages/login.html">Sign In</a></li>
+            <li><a href="/pages/register.html">Sign Up</a></li>
+          </ul>
+        </nav>
+      </header>
 
-                    <div class="measures">
-                        <div class="item_img"><img src="../images/stressed.jpg" alt=""></div>
-                        <div class="item_img"><img src="../images/stress_women.jpg" alt=""></div>
-                        <div class="bubble">
-                            <i class="bx bx-info-circle"></i>
-                            <h3>Your mind speaks too.</h3>
-                            <p>Analyze tension patterns and get alerts when your body needs a break.</p>
-                        </div>
-                    </div>
-
-                    <div class="measures">
-                        <div class="item_img"><img src="../images/sleep_tracker.jpg" alt=""></div>
-                        <div class="item_img"><img src="../images/sleeping.avif" alt=""></div>
-                        <div class="bubble">
-                            <i class="bx bx-info-circle"></i>
-                            <h3>Rest well, perform better.</h3>
-                            <p>Evaluate sleep quality and duration to boost recovery and daily energy.</p>
-                        </div>
-                    </div>
-
-                    <div class="measures">
-                        <div class="item_img"><img src="../images/run_walk.jpg" alt=""></div>
-                        <div class="item_img"><img src="../images/bikes_run.jpg" alt=""></div>
-                        <div class="bubble">
-                            <i class="bx bx-info-circle"></i>
-                            <h3>Every step matters.</h3>
-                            <p>Track physical activity—from walks to workouts—to keep your rhythm strong.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="vid_ct">
+        <div class="caption_vid">
+          <h1>This is where <span></span> Iconns are built.</h1>
+          <div class="ct_btns_vid">
+            <a href="#" class="btn_vid">Get Started</a>
+            <a href="#" class="btn_vid">Learn More</a>
+          </div>
         </div>
-        <div class="sync" id="sync">
-            <div class="watch_device">
-                <div class="watch">
-                    <div class="loaders"><span class="radar"></span><span class="loader"></span></div>
-                    <div class="watch_txt">
-                        <p>Syncing your device...</p>
-                    </div>
-                </div>
+        <div class="iphone_dinamic">
+          <div class="island" id="island">
+            <div class="noti_island">
+              <div class="icon_app">
+                <img src="../images/iconnics_logo.png" alt="" />
+              </div>
+
+              <div class="noti_cap">
+                <p><strong>Iconnics</strong> <span> • 1m</span></p>
+                <p>You haven't logged water in 3 hours. Stay fresh!</p>
+              </div>
             </div>
-            <div class="steps">
-                <h2>Connect your watch</h2>
-                <p><strong>How to connect:</strong></p>
-                <div class="quick_steps">
-                    <ol>
-                        <li class="stp_item active"><span>1. </span> Turn on Bluetooth</li>
-                        <li class="stp_item"><span>2. </span> Open the Iconnics app</li>
-                        <li class="stp_item"><span>3. </span> Tap your watch and hit “Connect”</li>
-                        <li class="stp_item"><span>4. </span> Grant permissions</li>
-                     </ol>
-                </div>
-            </div>
+            <audio src="../audios/Note-iPhone.mp3" id="noti_motion"></audio>
+          </div>
+          <div class="cntnt">
+            <video src="../videos/men_gym.mp4" muted loop autoplay></video>
+          </div>
         </div>
-        <div class="alerts" id="alerts">
-            <div class="cap_alerts">
-                <h4>Stay sharp.</h4>
-                <h3>Get Notified.</h3>
-                <h2>Move smart.</h2>
-                <p>Real-time alerts that keep you informed and in control <br>from workout feedback to health warnings.</p>
-                <div class="btn_push">
-                    <button id="allownoti" type="button" role="button"> <i class="bx bx-bell"></i> Allow Notifications</button>
-                </div>
-            </div>
+      </div>
+      <div class="carousel_quotes">
+        <div class="quote_ct">
+          <div class="quote">
+            <p>Your body doesn't lie—listen before it shouts.</p>
+          </div>
+          <div class="quote">
+            <p>Icons aren't born. They're built.</p>
+          </div>
+          <div class="quote">
+            <p>Every stat tells a story. Make yours iconic.</p>
+          </div>
         </div>
-        <div class="support" id="support">
-            <div class="support_ct">
-                <h2>Need Help?</h2>
-                <p>Our support team is here for you 24/7. Whether you have questions about setup, features, or troubleshooting, we're ready to assist.</p>
-                <div class="srchr">
-                    <input type="text" placeholder="Search tips, alerts or help...">
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,32L6.9,53.3C13.7,75,27,117,41,133.3C54.9,149,69,139,82,160C96,181,110,235,123,250.7C137.1,267,151,245,165,197.3C178.3,149,192,75,206,53.3C219.4,32,233,64,247,117.3C260.6,171,274,245,288,256C301.7,267,315,213,329,170.7C342.9,128,357,96,370,106.7C384,117,398,171,411,176C425.1,181,439,139,453,133.3C466.3,128,480,160,494,186.7C507.4,213,521,235,535,224C548.6,213,562,171,576,149.3C589.7,128,603,128,617,128C630.9,128,645,128,658,133.3C672,139,686,149,699,176C713.1,203,727,245,741,250.7C754.3,256,768,224,782,202.7C795.4,181,809,171,823,149.3C836.6,128,850,96,864,85.3C877.7,75,891,85,905,90.7C918.9,96,933,96,946,96C960,96,974,96,987,106.7C1001.1,117,1015,139,1029,138.7C1042.3,139,1056,117,1070,112C1083.4,107,1097,117,1111,106.7C1124.6,96,1138,64,1152,80C1165.7,96,1179,160,1193,165.3C1206.9,171,1221,117,1234,112C1248,107,1262,149,1275,186.7C1289.1,224,1303,256,1317,272C1330.3,288,1344,288,1358,272C1371.4,256,1385,224,1399,208C1412.6,192,1426,192,1433,192L1440,192L1440,320L1433.1,320C1426.3,320,1413,320,1399,320C1385.1,320,1371,320,1358,320C1344,320,1330,320,1317,320C1302.9,320,1289,320,1275,320C1261.7,320,1248,320,1234,320C1220.6,320,1207,320,1193,320C1179.4,320,1166,320,1152,320C1138.3,320,1125,320,1111,320C1097.1,320,1083,320,1070,320C1056,320,1042,320,1029,320C1014.9,320,1001,320,987,320C973.7,320,960,320,946,320C932.6,320,919,320,905,320C891.4,320,878,320,864,320C850.3,320,837,320,823,320C809.1,320,795,320,782,320C768,320,754,320,741,320C726.9,320,713,320,699,320C685.7,320,672,320,658,320C644.6,320,631,320,617,320C603.4,320,590,320,576,320C562.3,320,549,320,535,320C521.1,320,507,320,494,320C480,320,466,320,453,320C438.9,320,425,320,411,320C397.7,320,384,320,370,320C356.6,320,343,320,329,320C315.4,320,302,320,288,320C274.3,320,261,320,247,320C233.1,320,219,320,206,320C192,320,178,320,165,320C150.9,320,137,320,123,320C109.7,320,96,320,82,320C68.6,320,55,320,41,320C27.4,320,14,320,7,320L0,320Z"></path></svg>
+      </div>
+      <div class="features" id="features">
+        <div class="tracks">
+          <div class="slctor_tracks">
+            <h2>Our Measures Services</h2>
+            <ul class="item_slctor">
+              <li class="measure active">Heart Rate</li>
+              <li class="measure">Oxygenation</li>
+              <li class="measure">Hydratation</li>
+              <li class="measure">Stress</li>
+              <li class="measure">Sleep</li>
+              <li class="measure">Movement</li>
+            </ul>
+            <ul class="notes">
+              <li>
+                <p>
+                  <strong>Note: </strong> Each metric you select reveals
+                  real-time insights and visuals that help you understand your
+                  body's rhythm and recovery.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="imgs_tracks">
+            <div class="measures active">
+              <div class="item_img">
+                <img src="../images/heart.jpg" alt="" />
+              </div>
+              <div class="item_img">
+                <img src="../images/rate_heart.jpg" alt="" />
+              </div>
+              <div class="bubble">
+                <i class="bx bx-info-circle"></i>
+                <h3>Your rhythm, your signal.</h3>
+                <p>
+                  Track beats per minute to detect stress, physical effort, or
+                  irregularities.
+                </p>
+              </div>
             </div>
+
+            <div class="measures">
+              <div class="item_img">
+                <img src="../images/blood.jpg" alt="" />
+              </div>
+              <div class="item_img">
+                <img src="../images/blood_globes.jpg" alt="" />
+              </div>
+              <div class="bubble">
+                <i class="bx bx-info-circle"></i>
+                <h3>Breathe with clarity.</h3>
+                <p>
+                  Measure blood oxygen levels to ensure your body's absorbing
+                  what it needs.
+                </p>
+              </div>
+            </div>
+
+            <div class="measures">
+              <div class="item_img">
+                <img src="../images/hydrate.avif" alt="" />
+              </div>
+              <div class="item_img">
+                <img src="../images/water.avif" alt="" />
+              </div>
+              <div class="bubble">
+                <i class="bx bx-info-circle"></i>
+                <h3>Stay fluid.</h3>
+                <p>
+                  Detect signs of dehydration and maintain optimal water
+                  balance.
+                </p>
+              </div>
+            </div>
+
+            <div class="measures">
+              <div class="item_img">
+                <img src="../images/stressed.jpg" alt="" />
+              </div>
+              <div class="item_img">
+                <img src="../images/stress_women.jpg" alt="" />
+              </div>
+              <div class="bubble">
+                <i class="bx bx-info-circle"></i>
+                <h3>Your mind speaks too.</h3>
+                <p>
+                  Analyze tension patterns and get alerts when your body needs a
+                  break.
+                </p>
+              </div>
+            </div>
+
+            <div class="measures">
+              <div class="item_img">
+                <img src="../images/sleep_tracker.jpg" alt="" />
+              </div>
+              <div class="item_img">
+                <img src="../images/sleeping.avif" alt="" />
+              </div>
+              <div class="bubble">
+                <i class="bx bx-info-circle"></i>
+                <h3>Rest well, perform better.</h3>
+                <p>
+                  Evaluate sleep quality and duration to boost recovery and
+                  daily energy.
+                </p>
+              </div>
+            </div>
+
+            <div class="measures">
+              <div class="item_img">
+                <img src="../images/run_walk.jpg" alt="" />
+              </div>
+              <div class="item_img">
+                <img src="../images/bikes_run.jpg" alt="" />
+              </div>
+              <div class="bubble">
+                <i class="bx bx-info-circle"></i>
+                <h3>Every step matters.</h3>
+                <p>
+                  Track physical activity—from walks to workouts—to keep your
+                  rhythm strong.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="sync" id="sync">
+        <div class="watch_device">
+          <div class="watch">
+            <div class="loaders">
+              <span class="radar"></span><span class="loader"></span>
+            </div>
+            <div class="watch_txt">
+              <p>Syncing your device...</p>
+            </div>
+          </div>
+        </div>
+        <div class="steps">
+          <h2>Connect your watch</h2>
+          <p><strong>How to connect:</strong></p>
+          <div class="quick_steps">
+            <ol>
+              <li class="stp_item active">
+                <span>1. </span> Turn on Bluetooth
+              </li>
+              <li class="stp_item"><span>2. </span> Open the Iconnics app</li>
+              <li class="stp_item">
+                <span>3. </span> Tap your watch and hit “Connect”
+              </li>
+              <li class="stp_item"><span>4. </span> Grant permissions</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="alerts" id="alerts">
+        <div class="cap_alerts">
+          <h4>Stay sharp.</h4>
+          <h3>Get Notified.</h3>
+          <h2>Move smart.</h2>
+          <p>
+            Real-time alerts that keep you informed and in control <br />from
+            workout feedback to health warnings.
+          </p>
+          <div class="btn_push">
+            <button id="allownoti" type="button" role="button">
+              <i class="bx bx-bell"></i> Allow Notifications
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="support" id="support">
+        <div class="support_ct">
+          <h2>Need Help?</h2>
+          <p>
+            Our support team is here for you 24/7. Whether you have questions
+            about setup, features, or troubleshooting, we're ready to assist.
+          </p>
+          <div class="srchr">
+            <input type="text" placeholder="Search tips, alerts or help..." />
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path
+              fill="#fff"
+              fill-opacity="1"
+              d="M0,32L6.9,53.3C13.7,75,27,117,41,133.3C54.9,149,69,139,82,160C96,181,110,235,123,250.7C137.1,267,151,245,165,197.3C178.3,149,192,75,206,53.3C219.4,32,233,64,247,117.3C260.6,171,274,245,288,256C301.7,267,315,213,329,170.7C342.9,128,357,96,370,106.7C384,117,398,171,411,176C425.1,181,439,139,453,133.3C466.3,128,480,160,494,186.7C507.4,213,521,235,535,224C548.6,213,562,171,576,149.3C589.7,128,603,128,617,128C630.9,128,645,128,658,133.3C672,139,686,149,699,176C713.1,203,727,245,741,250.7C754.3,256,768,224,782,202.7C795.4,181,809,171,823,149.3C836.6,128,850,96,864,85.3C877.7,75,891,85,905,90.7C918.9,96,933,96,946,96C960,96,974,96,987,106.7C1001.1,117,1015,139,1029,138.7C1042.3,139,1056,117,1070,112C1083.4,107,1097,117,1111,106.7C1124.6,96,1138,64,1152,80C1165.7,96,1179,160,1193,165.3C1206.9,171,1221,117,1234,112C1248,107,1262,149,1275,186.7C1289.1,224,1303,256,1317,272C1330.3,288,1344,288,1358,272C1371.4,256,1385,224,1399,208C1412.6,192,1426,192,1433,192L1440,192L1440,320L1433.1,320C1426.3,320,1413,320,1399,320C1385.1,320,1371,320,1358,320C1344,320,1330,320,1317,320C1302.9,320,1289,320,1275,320C1261.7,320,1248,320,1234,320C1220.6,320,1207,320,1193,320C1179.4,320,1166,320,1152,320C1138.3,320,1125,320,1111,320C1097.1,320,1083,320,1070,320C1056,320,1042,320,1029,320C1014.9,320,1001,320,987,320C973.7,320,960,320,946,320C932.6,320,919,320,905,320C891.4,320,878,320,864,320C850.3,320,837,320,823,320C809.1,320,795,320,782,320C768,320,754,320,741,320C726.9,320,713,320,699,320C685.7,320,672,320,658,320C644.6,320,631,320,617,320C603.4,320,590,320,576,320C562.3,320,549,320,535,320C521.1,320,507,320,494,320C480,320,466,320,453,320C438.9,320,425,320,411,320C397.7,320,384,320,370,320C356.6,320,343,320,329,320C315.4,320,302,320,288,320C274.3,320,261,320,247,320C233.1,320,219,320,206,320C192,320,178,320,165,320C150.9,320,137,320,123,320C109.7,320,96,320,82,320C68.6,320,55,320,41,320C27.4,320,14,320,7,320L0,320Z"
+            ></path>
+          </svg>
+        </div>
+      </div>
     </div>
-    <script type="module" src="../js/index.js"></script>
-</body>
-
+    <script type="module" src="js/index.js"></script>
+  </body>
 </html>

@@ -1,100 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Iconnics - Sign Up</title>
-    <link rel="stylesheet" href="../css/login.css" />
-    <link
-      rel="shortcut icon"
-      href="../images/iconnics_logo.png"
-      type="image/x-icon"
-    />
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#297bef">
-    <link
-      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iconnics - Sign Up</title>
+    <link rel="shortcut icon" href="../images/iconnics_logo.png" type="image/x-icon" />
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#297bef" />
+    <link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/register.css" />
+</head>
+
+<body>
+    <!-- Formulario de registro con marca de agua -->
     <div class="ct_register">
-      <div class="dsgn">
-        <h1>
-          IC <br />
-          ON <br />NI <br />CS
-        </h1>
-      </div>
-      <form id="registerForm" method="post">
-        <h2>Create An Account</h2>
-        <div class="nya">
-          <label for="username">Name</label>
-          <label for="ape">Lastname (s)</label>
-          <input type="text" id="username" placeholder="Write your name" />
-          <input type="text" id="ape" placeholder="Write your last name" />
+        <!-- Marca de agua dentro del formulario -->
+        <div class="watermark">
+            <h1>
+                IC <br />
+                ON <br />
+                NI <br />
+                CS
+            </h1>
         </div>
-        <div class="pae">
-          <label for="wt">Weight</label>
-          <label for="ht">Height</label>
-          <label for="age">Age</label>
-          <input
-            type="number"
-            name="wt"
-            id="wt"
-            min="0"
-            max="500"
-            placeholder="Put your weight"
-          />
-          <input
-            type="text"
-            placeholder="Write your height"
-            id="ht"
-            name="ht"
-          />
-          <input
-            type="number"
-            name="age"
-            id="age"
-            placeholder="Write your age"
-            min="0"
-            max="120"
-          />
-        </div>
-        <div class="epd">
-          <div class="ep">
-            <label for="eml">Email</label>
-            <label for="pss">Password</label>
-            <input
-              type="email"
-              name="eml"
-              id="eml"
-              placeholder="Write your email"
-            />
-            <input
-              type="password"
-              name="pss"
-              id="pss"
-              placeholder="Set your password"
-            />
-          </div>
-          <div class="dprt">
-            <label for="dprt">Sport</label>
-            <select name="dprt" id="dprt">
-            </select>
-          </div>
-          <div class="rol">
-            <label for="rl">Rol</label>
-            <select name="rl" id="rl">
-              <option value="Entrenador">Entrenador</option>
-              <option value="Deportista">Deportista</option>
-            </select>
-          </div>
-          <div class="errorbox" id="errorbox"></div>
-        </div>
-        <input type="submit" value="Sign Up" />
-      </form>
+
+        <form id="registerForm" method="post">
+            <h2>Create An Account</h2>
+            <div class="nya">
+                <input type="text" id="username" placeholder="Name" />
+                <input type="text" id="ape" placeholder="Lastname" />
+            </div>
+            <div class="pae">
+                <input type="number" name="wt" id="wt" min="0" max="500" placeholder="Put your weight" />
+                <input type="text" placeholder="Write your height" id="ht" name="ht" />
+                <input type="number" name="age" id="age" placeholder="Write your age" min="0" max="120" />
+            </div>
+            <div class="epd">
+                <div class="ep">
+                    <input type="email" name="eml" id="eml" placeholder="Write your email" />
+                    <input type="password" name="pss" id="pss" placeholder="Set your password" />
+                </div>
+                <div class="dprt">
+                    <select name="dprt" id="dprt"></select>
+                </div>
+                <div class="rol">
+                    <select name="rl" id="rl">
+                        <option value="Entrenador">Entrenador</option>
+                        <option value="Deportista">Deportista</option>
+                    </select>
+                </div>
+                <div class="errorbox" id="errorbox"></div>
+            </div>
+            <input type="submit" value="Sign Up" />
+        </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="../js/register.js"></script>
-  </body>
+</body>
+
 </html>
