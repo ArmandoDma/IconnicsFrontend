@@ -1,5 +1,4 @@
 <section class="notifications-section">
-
   <header class="notif-header">
     <h2>Notificaciones</h2>
     <p>Centro de avisos importantes de tu actividad</p>
@@ -7,62 +6,11 @@
 
   <!-- CATEGORÍAS -->
   <div class="notif-categories">
-    <button class="cat-btn active" data-category="all">
-      <i class='bxr  bx-grid-column-right'></i>  Todas
-    </button>
-
-    <button class="cat-btn" data-category="salud">
-      <i class="bx bx-heart"></i> Salud
-    </button>
-
-    <button class="cat-btn" data-category="logros">
-      <i class="bx bx-trophy"></i> Logros
-    </button>
-
-    <button class="cat-btn" data-category="sistema">
-      <i class="bxr bx-cog"></i> Sistema
-    </button>
+    <button class="cat-btn active" data-category="all">Todas</button>
+    <button class="cat-btn" data-category="alto">Riesgo Alto</button>
+    <button class="cat-btn" data-category="bajo">Riesgo Bajo</button>
   </div>
 
-  <!-- LISTA -->
-  <div class="notifications-list">
-
-    <div class="notif-card" data-type="logros">
-      <i class="bx bx-star notif-icon blue"></i>
-      <div class="notif-content">
-        <h3>Semana destacada ⭐</h3>
-        <p>Tu desempeño aumentó un 12% comparado con la semana anterior.</p>
-        <span class="notif-time">Hace 2 horas</span>
-      </div>
-    </div>
-
-    <div class="notif-card" data-type="salud">
-      <i class="bx bx-heart notif-icon orange"></i>
-      <div class="notif-content">
-        <h3>Frecuencia cardíaca elevada</h3>
-        <p>Se detectaron valores por encima del promedio.</p>
-        <span class="notif-time">Hoy 9:15 AM</span>
-      </div>
-    </div>
-
-    <div class="notif-card" data-type="logros">
-      <i class="bx bx-trophy notif-icon blue"></i>
-      <div class="notif-content">
-        <h3>Meta completada 🎉</h3>
-        <p>Completaste tu objetivo de pasos por 7 días seguidos.</p>
-        <span class="notif-time">Ayer 6:08 PM</span>
-      </div>
-    </div>
-
-    <div class="notif-card" data-type="sistema">
-      <i class="bx bx-bell notif-icon orange"></i>
-      <div class="notif-content">
-        <h3>Actualización del sistema</h3>
-        <p>Tu actividad fue sincronizada correctamente.</p>
-        <span class="notif-time">Ayer 3:22 PM</span>
-      </div>
-    </div>
-
-  </div>
-
+  <!-- 🔥 LISTA DINÁMICA DESDE LA API -->
+  <div id="alertasContainer" class="notifications-list"></div>
 </section>

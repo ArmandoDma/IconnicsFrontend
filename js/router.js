@@ -1,9 +1,9 @@
 import { cargarModeloAnatomico, iniciarEscena } from "./3dmodel.js";
 import { benefitsCarousel } from "./benefits.js";
 import { stepsChart } from "./bodydata.js";
-import { getNotifications, initDashboard, populateHealthTips } from "./dash.js";
+import { getNotifications, initDashboard, loadMetrics, populateHealthTips } from "./dash.js";
 import { helpJS } from "./help.js";
-import { notifies } from "./notify.js";
+import { renderAlertas } from "./notify.js";
 import { chartWeek } from "./performance.js";
 
 const routes = {
@@ -94,13 +94,14 @@ async function loadContent() {
     }
 
     if(hash === "#notifications"){
-      notifies()
+      renderAlertas()
     }
 
     if (hash === "#dashboard") {
       initDashboard();
       populateHealthTips();
       getNotifications();
+      loadMetrics()
     }
   } catch (err) {
     document.getElementById("main-content").innerHTML =

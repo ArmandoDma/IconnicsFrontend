@@ -1,11 +1,21 @@
-export const getAlertas = async () => {
+export async function getAlertas() {
     try {
-        const response = await axios.get("https://iconnicsserver.zeabur.app/api/alertas");
-        return response.data;
+        const res = await fetch("https://iconnicsserver.zeabur.app/api/alertas");  // URL que estés usando ⚠
+        
+        if (!res.ok) {
+            console.error("❗ Error HTTP:", res.status, res.statusText);
+            throw new Error("La API respondió con un error");
+        }
+
+        const data = await res.json();
+        console.log("📥 Alertas recibidas:", data); // <-- Debug directo
+        return data;
+
     } catch (error) {
-        throw error.response?.data?.error || "Error al obtener alertas";
+        console.error("❌ Error dentro de getAlertas():", error);
+        throw error; // <-- Importante para que renderAlertas pueda detectar el fallo
     }
-};
+}
 
 export const getAlertaById = async (id) => {
     try {

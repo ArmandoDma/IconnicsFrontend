@@ -1,11 +1,12 @@
 export const getMediciones = async () => {
     try {
-        const response = await axios.get("https://iconnicsserver.zeabur.app/api/mediciones");
+        const response = await axios.get("https://iconnicsserver.zeabur.app/api/mediciones");    
         return response.data;
-    } catch (error) {
-        throw error.response?.data?.error || "Error al obtener mediciones";
+    } catch (e) {
+        throw "Error al obtener mediciones";
     }
 };
+
 
 export const getMedicionById = async (id) => {
     try {
