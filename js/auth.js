@@ -77,10 +77,10 @@ export const manejarRegister = async (
   try {
     const datos = {
       nombre,
-      edad,
+      edad:parseInt(edad, 10),
       rol,
-      peso,
-      altura,
+      peso: parseFloat(peso),
+      altura: parseFloat(altura.replace("m", "")),
       deporte,
       correo,
       contrasena,
@@ -91,8 +91,8 @@ export const manejarRegister = async (
     console.log(res)
   } catch (error) {
     showError(error.message || "Error de conexión con el servidor");
-    setTimeout(() => {
+    /**setTimeout(() => {
       window.location.reload();
-    }, 2000)
+    }, 2000)**/
   }
 };
