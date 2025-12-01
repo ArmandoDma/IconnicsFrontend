@@ -25,3 +25,16 @@ export const registerUsuario = async (datos) => {
     throw error.response?.data?.error || "error al conectar con el servidor";
   }
 };
+
+export async function getUserById(id) {
+  try {
+    const response = await axios.get(`https://iconnicsserver.zeabur.app/api/usuarios/${id}`);    
+    return response.data;
+  } catch (error) {
+    if (error.response) {
+      throw new Error(error.response.data.message || "Error al obtener usuario");
+    } else {
+      throw new Error("Error de red o servidor");
+    }
+  }
+}

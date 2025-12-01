@@ -1,10 +1,11 @@
 import { cargarModeloAnatomico, iniciarEscena } from "./3dmodel.js";
 import { benefitsCarousel } from "./benefits.js";
-import { stepsChart } from "./bodydata.js";
+import { renderBodyDataApiTexts, stepsChart } from "./bodydata.js";
 import { getNotifications, initDashboard, loadMetrics, populateHealthTips } from "./dash.js";
 import { helpJS } from "./help.js";
 import { renderAlertas } from "./notify.js";
-import { chartWeek } from "./performance.js";
+import { renderPerformanceStats } from "./performance.js";
+import { getSettingsInfo } from "./settings.js";
 
 const routes = {
   "#dashboard": "../pages/views/dashboard.html",
@@ -48,11 +49,14 @@ async function loadContent() {
   switch (hash) {
     case "#logout":
       localStorage.removeItem("token");
+      localStorage.removeItem("userSession");
       window.location.hash = lastValidHash;
       return;
 
     case "#dashboard":
     case "#performance":
+      lastValidHash = hash;
+      break;
     case "#tips":
     case "#bodydata":
       lastValidHash = hash;
@@ -78,6 +82,7 @@ async function loadContent() {
     if (hash === "#bodydata") {
       iniciarEscena("anatomyCanvas");
       cargarModeloAnatomico("../renders/scene.gltf");      
+      renderBodyDataApiTexts()
       stepsChart();
     }
 
@@ -90,7 +95,7 @@ async function loadContent() {
     }
 
     if(hash==="#performance"){
-      chartWeek()
+      renderPerformanceStats()
     }
 
     if(hash === "#notifications"){
@@ -102,6 +107,9 @@ async function loadContent() {
       populateHealthTips();
       getNotifications();
       loadMetrics()
+    }
+    if(hash === "#settings"){
+      getSettingsInfo()
     }
   } catch (err) {
     document.getElementById("main-content").innerHTML =

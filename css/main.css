@@ -260,6 +260,9 @@ body {
 .ct_dash .hdr .nv_hdr ul:nth-child(2) li button p {
   font-size: 0.75rem;
 }
+.ct_dash .hdr .nv_hdr ul:nth-child(2) li button p span{
+  font-size: .5rem;
+}
 .ct_dash .asi {
   width: 100%;
   min-height: 100%;

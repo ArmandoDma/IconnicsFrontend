@@ -1,4 +1,6 @@
-export function stepsChart (){
+import { getUserById } from "./api.js";
+
+export function stepsChart() {
   const stepsCompleted = 7200;
   const stepsGoal = 10000;
   const stepsRemaining = stepsGoal - stepsCompleted;
@@ -126,4 +128,32 @@ export function renderOrganCardsByZone(zoneId) {
   card.appendChild(iconDiv);
   card.appendChild(infoDiv);
   container.appendChild(card);
+}
+
+export async function renderBodyDataApiTexts() {
+  const weight = document.getElementById("peso");
+  const username_bdy = document.getElementById("username_bdy");
+  const genero = document.getElementById("genero");
+  const age = document.getElementById("edad");
+  let userSession = JSON.parse(localStorage.getItem("userSession"));
+  const {id_usuario} = userSession;
+  const {nombre, rol, correo, peso, altura, edad, deporte} = await getUserById(id_usuario);
+
+  weight.innerHTML = `Weight: ${peso} kg`;
+  genero.innerHTML = `Genre: ${guessGenderByName(nombre)}`;
+  age.innerHTML = `Age: ${edad.toString()} years old`
+  username_bdy.innerHTML = `${nombre}`
+}
+
+function getFirstName(fullName) {
+  return fullName?.trim().split(" ")[0] || null;
+}
+
+
+function guessGenderByName(fullName) {
+  const firstName = getFirstName(fullName);
+  if (!firstName) return "Unknown";
+
+  const lastChar = firstName.toLowerCase().slice(-1);
+  return lastChar === "a" ? "Female" : "Male";
 }

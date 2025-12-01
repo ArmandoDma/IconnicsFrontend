@@ -16,6 +16,36 @@ export const getTokenById = async (id) => {
     }
 };
 
+export async function getLastValidTokenByUser(userId) {
+  try {
+    const res = await axios.get("https://iconnicsserver.zeabur.app/api/tokens");
+    const tokens = res.data;
+
+    // Filtrar por usuario
+    const userTokens = tokens.filter((t) => t.id_usuario === userId);
+
+    // Ordenar por fecha de expiración
+    const sorted = userTokens.sort(
+      (a, b) =>
+        new Date(b.fecha_expiracion).getTime() -
+        new Date(a.fecha_expiracion).getTime()
+    );
+
+    if (sorted.length === 0) return null;
+
+    const lastToken = sorted[0];
+
+    // Validar activo y expiración
+    const isValid =
+      lastToken.activo === 1 &&
+      new Date(lastToken.fecha_expiracion) > new Date();
+    
+    return isValid ? lastToken : null;
+  } catch (err) {
+    throw new Error(err.response?.data?.msg || "Error fetching tokens");
+  }
+}
+
 export const createToken = async (datos) => {
     try {
         const response = await axios.post("https://iconnicsserver.zeabur.app/api/tokens", datos);

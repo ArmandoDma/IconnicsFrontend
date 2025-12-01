@@ -1,4 +1,5 @@
-import { loginUsuario, registerUsuario } from "./api.js";
+import { getUserById, loginUsuario, registerUsuario } from "./api.js";
+import { getLastValidTokenByUser } from "./tokens.js";
 
 export const manejarLogin = async (correo, contrasena) => {
   if (!correo || !contrasena) {
@@ -18,8 +19,10 @@ export const manejarLogin = async (correo, contrasena) => {
   }
 
   try {
-    const { token, mensaje } = await loginUsuario(correo, contrasena);
+    const { token, msg, usuario } = await loginUsuario(correo, contrasena);
+    const response = await getUserById(usuario.id)
     localStorage.setItem("token", token);
+    localStorage.setItem("userSession", JSON.stringify(response))
     window.location.href = "../pages/main.html#";
   } catch (error) {
     alert(error);
@@ -77,7 +80,7 @@ export const manejarRegister = async (
   try {
     const datos = {
       nombre,
-      edad:parseInt(edad, 10),
+      edad: parseInt(edad, 10),
       rol,
       peso: parseFloat(peso),
       altura: parseFloat(altura.replace("m", "")),
@@ -91,8 +94,8 @@ export const manejarRegister = async (
     console.log(res)
   } catch (error) {
     showError(error.message || "Error de conexión con el servidor");
-    /**setTimeout(() => {
+    setTimeout(() => {
       window.location.reload();
-    }, 2000)**/
+    }, 2000)
   }
 };

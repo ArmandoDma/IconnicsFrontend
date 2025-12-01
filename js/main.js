@@ -1,10 +1,19 @@
+import { getUserById } from "./api.js";
+
 window.addEventListener("load", () => {
   window.location.pathname.includes("main.html");
   window.location.assign("#main");
 });
 
+let userSession = JSON.parse(localStorage.getItem("userSession"));
+const {id_usuario} = userSession;
+const {nombre, rol, correo, peso, altura, edad, deporte} = await getUserById(id_usuario)
+const firstNombre = nombre.split(" ")
+
+
+
 let uinfo = document.getElementById("uinfo");
-uinfo.innerHTML = "User <br/> Email";
+uinfo.innerHTML = `${firstNombre[0]} <br/> <span class="uemail">${correo}</span>`;
 
 let lnks = document.querySelectorAll(".lnk");
 lnks.forEach((ln) => {
